@@ -52,11 +52,11 @@ var piwebapi = (function () {
         var data = {};
         data["1"] = {
             "Method": "GET",
-            "Resource": basePIWebAPIUrl + "/dataservers?name=" + piDataArchive
+            "Resource": encodeURI(basePIWebAPIUrl + "/dataservers?name=" + piDataArchive)
         };
         data["2"] = {
             "Method": "GET",
-            "Resource": "{0}?nameFilter=" + tagMask,
+            "Resource": "{0}?nameFilter=" + encodeURIComponent(tagMask),
             "Parameters": [
               "$.1.Content.Links.Points"
             ],
