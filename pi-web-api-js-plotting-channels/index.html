@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotting with PI Web API Channels</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- User login form -->
+        <div id="auth-view-mode">
+            <h1>Plotting with PI Web API Channels: Login Page</h1>
+            <form>
+                <div class="form-group">
+                    <label for="username">User name</label>
+                    <input type="text" class="form-control" id="username" placeholder="User name" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" />
+                </div>
+                <button type="button" id="go-to-plot-btn" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+
+        <!-- Plotting screen -->
+        <div id="plot-view-mode" style="display: none;">
+            <h1>Plotting with PI Web API Channels</h1>
+            <br />
+            <div id="nav">
+
+                <!-- Tag search -->
+                <form class="form-inline">
+                    <input type="text" class="form-control" id="tagmask-text" placeholder="Tag Mask" />
+                    <button type="button" id="search-btn" class="btn btn-default">Search for tags</button>
+                </form>
+                <br />
+
+                <!-- Information to plot -->
+                <form class="form-inline">
+                    <select class="form-control" id="tag-select"></select>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="time-interval-text" placeholder="Time Interval" />
+                        <select class="form-control" id="time-interval-unit">
+                            <option value="h">hour(s)</option>
+                            <option value="m">minute(s)</option>
+                            <option value="s">second(s)</option>
+                        </select>
+                    </div>
+                    <button type="button" id="plot-btn" class="btn btn-primary" disabled>Start Plot</button>
+                    <button type="button" id="stop-btn" class="btn btn-danger" disabled>Stop Update</button>
+                    <button type="button" id="back-btn" class="btn btn-default">Back to login page</button>
+                </form>
+                <br />
+            </div>
+
+            <!-- Placeholder for plot -->
+            <div id="plot" style="width:800px; height:400px"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="Scripts/flot/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="Scripts/flot/jquery.flot.time.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/piwebapi_wrapper.js"></script>
+    <script type="text/javascript" src="Scripts/app.js"></script>
+</body>
+</html>
